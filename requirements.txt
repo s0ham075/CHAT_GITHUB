@@ -1,0 +1,11 @@
+langchain
+astrapy>=0.5.3
+langchain-community
+langchain-together
+langchainhub
+fastembed
+streamlit
+GitPython
+stackapi
+google-search-results
+requests
