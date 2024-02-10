@@ -66,6 +66,11 @@ def load_repo(url):
     db = astra(token="AstraCS:BATxwaoHbsDRWctjGxgGFzvj:2fd4e930e73f98b42ee4c976a6deee5425ef3e73552d498adf7e628a15bc6fca",
         api_endpoint="https://39e4f0bb-6b50-45b2-bcc6-4d0dd1360f1c-us-east-2.apps.astra.datastax.com"
     )
+    collections_response = db.get_collections()
+    for collection in collections_response["status"]["collections"]:
+       target = get_repo_name(url)
+       if collection == target:
+           return 
     new_collection = db.create_collection(
     get_repo_name(url),
     dimension=384,
@@ -98,4 +103,5 @@ def repository_loader(url):
 
 
 
+       
 print('HELLO FROM CONTAINER')
